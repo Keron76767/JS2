@@ -1,0 +1,24 @@
+﻿<script>
+    let continueTest = true;
+
+    while (continueTest) {
+        const operand1 = getRandomOperand();
+        const operand2 = getRandomOperand();
+        const correctAnswer = operand1 * operand2;
+
+        const userAnswer = parseInt(prompt(`Сколько будет ${operand1} * ${operand2}?`));
+
+        if (userAnswer === correctAnswer) {
+            alert("Правильно!");
+        } else {
+            alert(`Неправильно. Правильный ответ: ${correctAnswer}`);
+        }
+
+        const continueInput = prompt("Хотите продолжить тестирование? (Введите 'y' для продолжения):");
+        continueTest = (continueInput.toLowerCase() === 'y');
+    }
+
+    function getRandomOperand() {
+        return Math.floor(Math.random() * 9) + 2; // Случайное число от 2 до 10
+    }
+</script>
